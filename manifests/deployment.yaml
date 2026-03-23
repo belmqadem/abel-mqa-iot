@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-playground
+  name: valarmo-playground
   namespace: dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-playground
+      app: valarmo-playground
   template:
     metadata:
       labels:
-        app: my-playground
+        app: valarmo-playground
     spec:
       containers:
-        - name: my-playground
+        - name: valarmo-playground
           image: valarmo3/playground:v1
           ports:
             - containerPort: 8888
@@ -22,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-playground
+  name: valarmo-playground
   namespace: dev
 spec:
   selector:
-    app: my-playground
+    app: valarmo-playground
   ports:
     - port: 8888
       targetPort: 8888
