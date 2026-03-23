@@ -27,6 +27,7 @@ metadata:
 spec:
   selector:
     app: valarmo-playground
+  type: LoadBalancer
   ports:
     - port: 8888
       targetPort: 8888
